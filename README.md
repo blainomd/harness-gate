@@ -2,7 +2,7 @@
 
 A fail-closed gate between an AI agent and an action. Zero dependencies, Node 20+, Apache-2.0.
 
-**What it does today (tested: `npm test`, 55 checks):**
+**What it does today (tested: `npm test`, 57 checks):**
 - Classifies a tool call into read / draft / write_record / message_out / money / clinical / regulated_filing / unknown by name.
 - Default policy: reads and drafts go ahead; a message out, a clinical step or a regulated filing is held for a person; money is denied; anything unknown is held.
 - Scans the arguments and only ever makes a verdict stricter: instruction-like text aimed at the agent, credentials, patient-identifier patterns, destructive shell patterns.

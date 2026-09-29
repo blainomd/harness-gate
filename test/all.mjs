@@ -20,6 +20,7 @@ const C = {
   'mcp__floorpricer__buy_stock': 'money', 'mcp__x__sell_stock': 'money', 'mcp__x__transfer_time_credits': 'money',
   'mcp__x__generate_prior_auth': 'regulated_filing', 'mcp__x__submit_claim': 'regulated_filing',
   'mcp__x__update_profile': 'write_record', 'mcp__x__log_care_session': 'write_record',
+  'mcp__playwright__browser_click': 'write_record', 'mcp__github__merge_pull_request': 'message_out', 'mcp__github__create_issue': 'message_out', 'mcp__github__search_code': 'read',
   'mcp__x__frobnicate': 'unknown',
 };
 for (const [tool, want] of Object.entries(C)) t(`classify ${tool} -> ${want}`, () => assert.equal(classify(tool), want));

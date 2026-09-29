@@ -11,6 +11,8 @@ export const POLICY = {
 // mistaken for a sign-off or a send), then the risky classes, then the generic verbs.
 export const TOOL_RULES = [
   ['write_record', /^shell$/i], // the hook's stand-in for an ordinary shell command; dangerous patterns are scanned separately
+  ['write_record', /^browser_|^computer$|^(left_|right_|double_)?click$|^tabs_/i], // page interaction; risky clicks are for the permission system
+  ['message_out', /(pull_request|push_files|create_or_update_file|create_issue|add_issue_comment|update_issue|create_pull_request_review|fork_repository|create_repository)/i], // publishes outside the device
   ['draft', /(^|[_.\-])(draft|create_draft|update_draft|compose|preview)([_.\-]|$)/i],
   ['read', /^(get|list|read|search|query|fetch|find|describe|lookup|check|count|view|show|identify|calculate|score|validate|suggest|render|resolve|explain)([_.\-]|$)/i],
   ['money', /(^|[_.\-])(buy|sell|transfer|pay|payment|checkout|charge|refund|invoice|purchase|withdraw|deposit)([_.\-]|$)/i],
